@@ -71,4 +71,9 @@ Follow these steps to run the project locally.
 4.  **Battle:** Go to the "Battle Arena", select an enemy, pick your attacker, and FIGHT!
 5.  **Level Up:** Win battles or pay a small fee to increase your warrior's level.
 
-## 📂 Project Structure
+## 📜 Smart Contract Details
+
+The smart contract utilizes `keccak256` for pseudo-random number generation to determine battle outcomes and stat distribution. It inherits from OpenZeppelin's secure contract standards.
+
+* **Solidity Version:** ^0.8.0
+* **Network:** Sepolia Testnet (Recommended)
