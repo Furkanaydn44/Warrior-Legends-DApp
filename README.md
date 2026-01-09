@@ -1,3 +1,5 @@
+Read this in [English](README.md) oku 🇬🇧
+
 # ⚔️ Warrior Legends - NFT Battle DApp
 
 > An Ethereum-based RPG game where players can mint, train, and battle with unique NFT warriors.
@@ -77,3 +79,87 @@ The smart contract utilizes `keccak256` for pseudo-random number generation to d
 
 * **Solidity Version:** ^0.8.0
 * **Network:** Sepolia Testnet (Recommended)
+
+
+
+Bu dokümanı [Türkçe](README.md) oku 🇹🇷
+
+# ⚔️ Warrior Legends - NFT Savaş DApp'i
+
+> Oyuncuların benzersiz NFT savaşçıları üretebildiği (mint), eğitebildiği ve diğer oyuncularla savaştırabildiği Ethereum tabanlı bir RPG oyunu.
+
+![Proje Durumu](https://img.shields.io/badge/Status-Aktif-success)
+![Teknoloji Yığını](https://img.shields.io/badge/Stack-Solidity%20%7C%20React%20%7C%20Ethers.js-blue)
+![Lisans](https://img.shields.io/badge/License-MIT-yellow)
+
+## 📖 Proje Hakkında
+
+**Warrior Legends**, Ethereum blokzinciri üzerinde çalışan merkeziyetsiz bir uygulamadır (DApp). Bu proje, ERC-721 NFT standartlarını RPG oyun mekanikleriyle birleştirir. Kullanıcılar rastgele özelliklere sahip kendi benzersiz savaşçılarını üretebilir, deneyim kazanmak için diğer oyuncularla savaşabilir ve karakterlerini takas edebilirler.
+
+Bu proje; Akıllı Kontrat yazımı, frontend entegrasyonu ve cüzdan bağlantısı dahil olmak üzere uçtan uca (full-stack) bir blokzincir geliştirme döngüsünü simüle eder.
+
+### ✨ Temel Özellikler
+
+* **Minting (Üretim) Sistemi:** Blok zaman damgasına (timestamp) dayalı, rastgele Saldırı ve Savunma güçlerine sahip benzersiz NFT savaşçıları oluşturma.
+* **Savaş Arenası:** Diğer oyuncuların savaşçılarına karşı mücadele imkanı. Kazanan, kaybedenin deneyim puanlarını (XP) alır ve seviye atlar!
+* **Seviye Algoritması:** Mevcut istatistiklere (stats) göre algoritmik olarak hesaplanan dinamik seviye sistemi.
+* **Ödeme Fonksiyonları (Payable):** Kullanıcıların seviye atlamayı hızlandırmak için ETH ödeyebildiği, "oyun içi satın alma" mantığı.
+* **Bekleme Süresi (Cooldown):** Spam saldırılarını önlemek ve stratejik oyun deneyimi sunmak için bekleme sayaçları.
+* **Dinamik Metadata:** Her savaştan sonra NFT özelliklerinin blokzincirinde gerçek zamanlı olarak güncellenmesi.
+
+## 🛠️ Teknoloji Yığını
+
+* **Blokzincir:** Ethereum (Solidity Akıllı Kontratları)
+* **Standart:** ERC-721 URIStorage (OpenZeppelin)
+* **Arayüz (Frontend):** React.js
+* **Kütüphane:** Blokzincir etkileşimi için Ethers.js (v6)
+* **Stil:** Tailwind CSS
+
+## 🚀 Kurulum ve Başlangıç
+
+Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları izleyin.
+
+### Gereksinimler
+
+* Bilgisayarınızda [Node.js](https://nodejs.org/)'in kurulu olması.
+* Tarayıcınızda [MetaMask](https://metamask.io/) eklentisinin yüklü olması.
+* İçinde test ETH bulunan bir testnet hesabı (Örn: Sepolia).
+
+### Yükleme Adımları
+
+1.  **Depoyu (Repository) klonlayın**
+    ```bash
+    git clone [https://github.com/KULLANICI_ADINIZ/warrior-legends-dapp.git](https://github.com/KULLANICI_ADINIZ/warrior-legends-dapp.git)
+    cd warrior-legends-dapp
+    ```
+
+2.  **Bağımlılıkları yükleyin**
+    ```bash
+    npm install
+    ```
+
+3.  **Akıllı Kontratı Yapılandırın**
+    * `Warriors.sol` kontratını Remix IDE veya Hardhat kullanarak deploy edin (dağıtın).
+    * Oluşan **Kontrat Adresini** ve **ABI** kodunu alın.
+    * Kontrat adresini `src/contracts/contractInfo.js` dosyasına yapıştırın.
+    * ABI içeriğini `src/contracts/ABI.json` dosyasına yapıştırın.
+
+4.  **Uygulamayı çalıştırın**
+    ```bash
+    npm start
+    ```
+
+## 🎮 Nasıl Oynanır?
+
+1.  **Cüzdanı Bağla:** MetaMask cüzdanınızı bağlamak için "Connect Wallet" butonuna tıklayın.
+2.  **Savaşçı Oluştur:** "Create" sekmesine gidin, savaşçınıza bir isim verin, sınıfını seçin ve "Mint" işlemini yapın.
+3.  **Koleksiyonu Görüntüle:** NFT'lerinizi ve güçlerini görmek için "My Warriors" sekmesini kontrol edin.
+4.  **Savaş:** "Battle Arena"ya gidin, bir rakip seçin, kendi saldırı karakterinizi belirleyin ve SAVAŞIN!
+5.  **Seviye Atla:** Savaş kazanarak veya küçük bir miktar ETH ödeyerek savaşçınızın seviyesini yükseltin.
+
+## 📜 Akıllı Kontrat Detayları
+
+Akıllı kontrat, savaş sonuçlarını belirlemek ve stat dağılımını yapmak için `keccak256` algoritmasını kullanarak sözde rastgele sayı üretimi (pseudo-random number generation) gerçekleştirir. Güvenlik için OpenZeppelin standartlarını miras alır (inherit).
+
+* **Solidity Sürümü:** ^0.8.0
+* **Ağ:** Sepolia Testnet (Önerilen)
